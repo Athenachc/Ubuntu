@@ -1,12 +1,12 @@
 # Setting up a new Ubuntu 20.04 environment for ROS
 
-## Teminator
+## #Teminator
 ```
 sudo apt-get update
 sudo apt install terminator
 ```
 
-# ROS Noetic
+### ROS Noetic
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt install curl # if you haven't already installed curl
@@ -21,7 +21,7 @@ sudo rosdep init
 rosdep update
 ```
 
-# MAVROS
+### MAVROS
 ```
 sudo apt-get update
 sudo apt-get upgrade
