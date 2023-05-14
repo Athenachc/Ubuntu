@@ -1,6 +1,6 @@
 # Setting up a new Ubuntu 20.04 environment for ROS
 
-###Teminator
+### Teminator
 ```
 sudo apt-get update
 sudo apt install terminator
@@ -30,3 +30,26 @@ wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/inst
 sudo chmod a+x ./install_geographiclib_datasets.sh
 sudo ./install_geographiclib_datasets.sh 
 ```
+Run MAVROS
+```
+cd ~/${workspace}/
+roslaunch ${package} px4_gazebo.launch
+```
+
+### PX4 
+```
+cd ~
+git clone https://github.com/PX4/PX4-Autopilot.git
+cd PX4-Autopilot/
+git checkout 71db090
+git submodule sync --recursive
+git submodule update --init --recursive
+bash ./Tools/setup/ubuntu.sh
+sudo apt upgrade libignition-math4 
+```
+Start PX4 SITL
+```
+cd ~/PX4-Autopilot/
+make px4_sitl_default gazebo
+```
+
